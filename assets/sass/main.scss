@@ -1,5 +1,9 @@
 @charset "UTF-8";
 // abstracts
+@import
+   'abstracts/mixins',
+   'abstracts/variables';
+
 
 // vendors
 @import
@@ -14,7 +18,13 @@
 
 // components
 @import
- 'components/images';
+
+  'components/images',
+  'components/navbar',
+  'components/carousel',
+  'components/card',
+  'components/testimonio';
+
   
 
 // pages
