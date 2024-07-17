@@ -1,0 +1,9 @@
+form {
+  .form-label {
+    &::after {
+      content: '';
+      color: $color-white;
+      margin-left: 0.25rem;
+    }
+  }
+}

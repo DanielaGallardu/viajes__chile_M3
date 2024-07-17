@@ -1,0 +1,16 @@
+.btn-primary{
+  color: $color-black;
+  font-weight:bold;
+  background-color: $color-btn;
+  border-color: $color-btn;
+
+  @include md {
+    width: 100%;
+  }
+
+}
+
+.btn-primary:hover{
+  background-color: $color-card-text;
+  border-color: $color-secondary;
+}

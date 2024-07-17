@@ -1,0 +1,22 @@
+hr{
+  border-top-color: $color-white;
+  opacity: 1;
+}
+
+.res-mt{
+  @include md {
+    margin-top: 1rem;
+  }
+}
+
+.modal-dark .modal-content {
+  background-color: $color-modal;
+  color:$color-white;
+  border: none;
+}
+.modal-dark .modal-header, .modal-dark .modal-footer {
+  border: none;
+}
+.modal-dark .btn-close {
+  filter: invert(1);
+}

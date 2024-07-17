@@ -1,0 +1,14 @@
+.contact-list{
+  list-style-type: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  a{
+      text-decoration: none;
+      color:$color-white;
+      cursor: pointer;
+  }
+}
+.phone__numb{
+  font-family:sans-serif;
+}

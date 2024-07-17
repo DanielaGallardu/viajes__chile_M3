@@ -1,43 +1,40 @@
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+$(document).ready(function() {
+    // Inicializa tooltips
+    $('[data-bs-toggle="tooltip"]').tooltip();
 
-$('a.nav-link').click(function (event) {
-    if (this.hash !== '') {
-        event.preventDefault()
-        const idTag = this.hash
-        console.log(this.hash)
-        $('html, body').animate(
-            {
-                scrollTop: $(idTag).offset().top
-            },
-            1000,
-            function () {
-                window.location.hash = idTag
-            }
-        )
+    $('.nav-link').click(function(event) {
+        event.preventDefault();
+        var targetId = $(this).attr('href').substring(1);
+        var targetElement = $('#' + targetId);
+        $('html, body').animate({
+            scrollTop: targetElement.offset().top
+        }, 'slow');
+    });
+    
+    // Previene el comportamiento predeterminado del formulario
+    $('#form-contact').submit(function(event) {
+      event.preventDefault();
+      // Check each input and textarea
+
+    if ($("#nombre-input").val() === '') {
+        alert("Debe completar el nombre")
     }
-})
-$("#enviarCorreo").click(function () {
-    const nombre = $('#inputNombre').val();
-    const asunto = $('#inputAsunto').val();
-    const mensaje = $('#textArea').val();
-
-    if (nombre === '') {
-        alert('Por favor, completa el campo de nombre.');
-        return false;
-    } else if (asunto === '') {
-        alert('Por favor, completa el campo de asunto.');
-        return false; 
-    } else if (mensaje === '') {
-        alert('Por favor, completa el campo de mensaje.');
-        return false; 
-    } else {
-        alert("El correo fue enviado correctamente");
-        
+    else if ($("#email-input").val() === '') {
+        alert("Debe completar el correo")
+    }
+    else if ($("#mensaje-input").val() === '') {
+        alert("Debe completar el mensaje")
+    }
+    else if (!$('#flexCheckDefault').is(':checked')) {
+        alert("Debe aceptar los términos y condiciones")
+    }else{
+        alert("Su mensaje ha sido enviado")
     }
 
-});
+      
 
-$(".img-carta").dblclick(function () {
-    $(".card-text, .card-title").toggle();
-});
+
+
+    });
+  });
+  

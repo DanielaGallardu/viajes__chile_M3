@@ -1,3 +1,33 @@
 .carousel-inner {
   z-index: 1;
 }
+
+.carousel-item{
+  height: 500px;
+  object-fit: cover;
+
+  @include md {
+    height: 300px;
+  }
+
+
+  img{
+    margin-top: -100px;
+
+    @include lg {
+      margin-top: -50px;
+      height: 600px;
+    }
+
+    @include md {
+      margin-top: 0;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    
+
+
+  }
+
+}
